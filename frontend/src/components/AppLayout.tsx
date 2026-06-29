@@ -21,6 +21,7 @@ import {
   BulbOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  ThunderboltOutlined,
 } from '@ant-design/icons'
 import { useAuthStore } from '../store/authStore'
 
@@ -39,6 +40,11 @@ export default function AppLayout() {
       key: '/',
       icon: <HomeOutlined />,
       label: '首页',
+    },
+    {
+      key: '/training',
+      icon: <ThunderboltOutlined />,
+      label: '训练中心',
     },
     {
       key: '/prompts',

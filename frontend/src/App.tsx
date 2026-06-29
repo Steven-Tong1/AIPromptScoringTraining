@@ -12,6 +12,7 @@ import CreatePromptPage from './pages/CreatePromptPage'
 import ProfilePage from './pages/ProfilePage'
 import MembershipPage from './pages/MembershipPage'
 import MyPromptsPage from './pages/MyPromptsPage'
+import TrainingPage from './pages/TrainingPage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, initialized } = useAuthStore()
@@ -73,6 +74,7 @@ export default function App() {
         <Route path="my-prompts" element={<MyPromptsPage />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="membership" element={<MembershipPage />} />
+        <Route path="training" element={<TrainingPage />} />
       </Route>
     </Routes>
   )

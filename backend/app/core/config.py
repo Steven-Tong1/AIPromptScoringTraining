@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     # Database
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/ai_prompt_training"
+    DATABASE_URL: str = "postgresql://postgres:Admin19950929@localhost:5432/ai_prompt_training"
 
     # JWT
     SECRET_KEY: str = "your-super-secret-key-change-in-production"
@@ -17,6 +17,13 @@ class Settings(BaseSettings):
 
     # OpenAI
     OPENAI_API_KEY: Optional[str] = None
+
+    # Multi-Model API Keys
+    DEEPSEEK_API_KEY: Optional[str] = None
+    QWEN_API_KEY: Optional[str] = None
+    KIMI_API_KEY: Optional[str] = None
+    DOUBAO_API_KEY: Optional[str] = None
+    CLAUDE_API_KEY: Optional[str] = None
 
     # App
     APP_NAME: str = "AIPromptScoringTraining"

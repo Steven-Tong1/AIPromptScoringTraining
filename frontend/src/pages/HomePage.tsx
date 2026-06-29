@@ -21,6 +21,8 @@ import {
   RightOutlined,
   ArrowRightOutlined,
   CrownOutlined,
+  ThunderboltOutlined,
+  BulbOutlined,
 } from '@ant-design/icons'
 import { useAuthStore } from '../store/authStore'
 import { promptsAPI, Prompt } from '../api'
@@ -104,6 +106,43 @@ export default function HomePage() {
         </Row>
       </Card>
 
+      {/* Training Banner */}
+      <Card
+        hoverable
+        style={{
+          marginBottom: 24,
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          borderRadius: 12,
+          border: 'none',
+          cursor: 'pointer',
+        }}
+        onClick={() => navigate('/training')}
+      >
+        <Row align="middle" justify="space-between">
+          <Col>
+            <Space direction="vertical" size={4}>
+              <Title level={4} style={{ color: '#fff', margin: 0 }}>
+                <ThunderboltOutlined /> AI Prompt 训练中心
+              </Title>
+              <Paragraph style={{ color: '#fff', margin: 0, opacity: 0.9 }}>
+                输入您的Prompt → 选择模型 → AI多维评分 → 获得优化建议与专属训练任务
+              </Paragraph>
+            </Space>
+          </Col>
+          <Col>
+            <Button
+              type="primary"
+              ghost
+              size="large"
+              icon={<BulbOutlined />}
+              style={{ borderColor: '#fff', color: '#fff' }}
+            >
+              开始训练
+            </Button>
+          </Col>
+        </Row>
+      </Card>
+
       {/* Stats Cards */}
       <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
         <Col xs={24} sm={8}>
@@ -129,12 +168,12 @@ export default function HomePage() {
           </Card>
         </Col>
         <Col xs={24} sm={8}>
-          <Card hoverable onClick={() => navigate('/membership')}>
+          <Card hoverable onClick={() => navigate('/training')}>
             <Statistic
-              title="会员状态"
-              value="免费版"
-              prefix={<CrownOutlined />}
-              valueStyle={{ color: themeToken.colorWarning }}
+              title="训练中心"
+              value="3步评分"
+              prefix={<ThunderboltOutlined />}
+              valueStyle={{ color: themeToken.colorPrimary }}
             />
           </Card>
         </Col>
